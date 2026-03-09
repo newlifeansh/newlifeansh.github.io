@@ -132,8 +132,12 @@
       align-items: start;
       transition: background 0.2s;
       cursor: default;
+      text-decoration: none; color: inherit;
     }
     .feat-card:hover { background: #1e1e1e; }
+    a.feat-card { cursor: pointer; }
+    .feat-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; color: var(--accent); text-decoration: none; margin-top: 0.8rem; opacity: 0.8; transition: opacity 0.2s; }
+    .feat-link:hover { opacity: 1; }
     .feat-num-block { text-align: center; min-width: 120px; padding-top: 0.2rem; }
     .feat-num {
       font-size: 3.8rem; font-weight: 900; color: var(--accent);
@@ -401,6 +405,7 @@
           <span class="feat-tag">광고 매출 450만원/일</span>
           <span class="feat-tag">GPT · 벡터 유사도</span>
         </div>
+        <a href="https://event.kakaobank.com/p/event?i=keyword" target="_blank" rel="noopener" class="feat-link">서비스 보기 →</a>
       </div>
     </div>
 
@@ -421,6 +426,7 @@
           <span class="feat-tag">트래픽 4.7배↑</span>
           <span class="feat-tag">제휴 광고 수익화</span>
         </div>
+        <a href="https://event.kakaobank.com/p/event?i=moneyplay" target="_blank" rel="noopener" class="feat-link">서비스 보기 →</a>
       </div>
     </div>
 
@@ -440,6 +446,10 @@
           <span class="feat-tag">DAU 323만→694만</span>
           <span class="feat-tag">Vivino 제휴</span>
           <span class="feat-tag">OCR · 빅스비 비전</span>
+        </div>
+        <div style="display:flex; gap:1rem; margin-top:0.8rem;">
+          <a href="https://v.daum.net/v/F3WMlLA0zc" target="_blank" rel="noopener" class="feat-link">스마트 쿠킹 →</a>
+          <a href="https://blog.naver.com/itblogger621/222771491441?trackingCode=rss" target="_blank" rel="noopener" class="feat-link">와인 스캔 →</a>
         </div>
       </div>
     </div>
@@ -461,6 +471,7 @@
           <span class="feat-tag">제휴사 소요기간 1달 단축</span>
           <span class="feat-tag">퍼널 분석</span>
         </div>
+        <a href="https://www.techm.kr/news/articleView.html?idxno=318764" target="_blank" rel="noopener" class="feat-link">관련 기사 →</a>
       </div>
     </div>
 
@@ -730,7 +741,7 @@
   </p>
   <div class="contact-links">
     <a href="mailto:newlife.ansh@gmail.com" class="btn-primary">newlife.ansh@gmail.com</a>
-    <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
+    <a href="https://www.linkedin.com/in/connor-sh/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn →</a>
   </div>
 </section>
 
