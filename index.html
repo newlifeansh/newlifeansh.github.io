@@ -48,19 +48,11 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem;
+      display: flex; flex-direction: column; justify-content: center;
       padding: 80px 5% 60px;
       position: relative; overflow: hidden;
     }
-    .hero-text { display: flex; flex-direction: column; justify-content: center; }
-    .hero-photo { flex-shrink: 0; }
-    .hero-photo img {
-      width: 280px; height: 280px;
-      border-radius: 50%;
-      object-fit: cover; object-position: center top;
-      border: 4px solid var(--border);
-      box-shadow: 0 8px 40px rgba(26,86,219,0.12);
-    }
+    .hero-text { display: flex; flex-direction: column; }
     .hero::before {
       content: ''; position: absolute; top: -20%; right: -5%;
       width: 700px; height: 700px;
@@ -275,9 +267,6 @@
       <a href="#featured" class="btn-primary">프로젝트 보기</a>
       <a href="#contact" class="btn-ghost">연락하기</a>
     </div>
-  </div>
-  <div class="hero-photo">
-    <img src="profile.jpg" alt="안석환 프로필 사진" />
   </div>
 </section>
 
