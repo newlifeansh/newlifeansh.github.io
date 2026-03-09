@@ -7,19 +7,19 @@
   <meta name="description" content="13년 경력의 AI 서비스 PO 안석환의 포트폴리오" />
   <style>
     :root {
-      --bg: #0d0d0d;
-      --bg2: #141414;
-      --bg3: #1c1c1c;
-      --card: #181818;
-      --border: #272727;
-      --accent: #f5c842;
-      --accent2: #e8b800;
-      --text: #e8e8e8;
-      --muted: #7a7a7a;
-      --muted2: #4a4a4a;
-      --kakao: #FFCD00;
-      --coupang: #EF1B1B;
-      --lg: #A50034;
+      --bg: #ffffff;
+      --bg2: #f4f7fb;
+      --bg3: #e8eef7;
+      --card: #ffffff;
+      --border: #dde4ee;
+      --accent: #1a56db;
+      --accent2: #1245b8;
+      --text: #1a1f2e;
+      --muted: #5a6481;
+      --muted2: #9ba4bc;
+      --kakao: #e6a800;
+      --coupang: #c0392b;
+      --lg: #8e0028;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -34,7 +34,7 @@
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(13,13,13,0.9);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
@@ -48,27 +48,36 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem;
       padding: 80px 5% 60px;
       position: relative; overflow: hidden;
+    }
+    .hero-text { display: flex; flex-direction: column; justify-content: center; }
+    .hero-photo { flex-shrink: 0; }
+    .hero-photo img {
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 4px solid var(--border);
+      box-shadow: 0 8px 40px rgba(26,86,219,0.12);
     }
     .hero::before {
       content: ''; position: absolute; top: -20%; right: -5%;
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(245,200,66,0.05) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(26,86,219,0.06) 0%, transparent 65%);
       pointer-events: none;
     }
     .hero-tag {
       display: inline-block;
       font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
       color: var(--accent); text-transform: uppercase;
-      border: 1px solid rgba(245,200,66,0.25);
+      border: 1px solid rgba(26,86,219,0.25);
       padding: 0.3em 1em; border-radius: 20px; margin-bottom: 1.5rem;
       width: fit-content;
     }
     .hero h1 {
       font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; color: #fff;
+      font-weight: 800; line-height: 1.0; letter-spacing: -0.03em; color: var(--accent);
       margin-bottom: 1.5rem;
     }
     .hero h1 span { color: var(--accent); }
@@ -78,10 +87,10 @@
     .hero-stat-val { font-size: 2rem; font-weight: 800; color: var(--accent); letter-spacing: -0.02em; line-height: 1; }
     .hero-stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; margin-top: 0.3rem; text-transform: uppercase; }
     .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary { background: var(--accent); color: #000; font-weight: 700; font-size: 0.88rem; padding: 0.8em 2em; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.15s; letter-spacing: 0.02em; }
+    .btn-primary { background: var(--accent); color: #fff; font-weight: 700; font-size: 0.88rem; padding: 0.8em 2em; border-radius: 3px; text-decoration: none; transition: background 0.2s, transform 0.15s; letter-spacing: 0.02em; }
     .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-    .btn-ghost { border: 1px solid #333; color: var(--text); font-size: 0.88rem; padding: 0.8em 2em; border-radius: 3px; text-decoration: none; transition: border-color 0.2s, transform 0.15s; }
-    .btn-ghost:hover { border-color: var(--muted); transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); font-size: 0.88rem; padding: 0.8em 2em; border-radius: 3px; text-decoration: none; transition: border-color 0.2s, transform 0.15s; }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
     /* ── AWARDS ── */
     .awards-bar { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 13px 0; overflow: hidden; }
@@ -90,12 +99,12 @@
     @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
     .award-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.78rem; color: var(--muted); flex-shrink: 0; }
     .award-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    .award-item strong { color: #ccc; }
+    .award-item strong { color: var(--text); }
 
     /* ── SECTION COMMON ── */
     section { padding: 100px 5%; }
     .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #fff; margin-bottom: 0.6rem; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: var(--text); margin-bottom: 0.6rem; }
     .section-desc { color: var(--muted); font-size: 0.92rem; margin-bottom: 3rem; max-width: 500px; }
     .divider { height: 1px; background: var(--border); margin: 0 5%; }
 
@@ -134,7 +143,7 @@
       cursor: default;
       text-decoration: none; color: inherit;
     }
-    .feat-card:hover { background: #1e1e1e; }
+    .feat-card:hover { background: #eef3fc; }
     a.feat-card { cursor: pointer; }
     .feat-link { display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; color: var(--accent); text-decoration: none; margin-top: 0.8rem; opacity: 0.8; transition: opacity 0.2s; }
     .feat-link:hover { opacity: 1; }
@@ -147,22 +156,22 @@
     .feat-content {}
     .feat-badges { display: flex; gap: 0.5rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
     .feat-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; padding: 0.2em 0.6em; border-radius: 2px; text-transform: uppercase; }
-    .badge-kakao { background: rgba(255,205,0,0.12); color: var(--kakao); }
-    .badge-samsung { background: rgba(20,40,160,0.2); color: #6b8cff; }
-    .badge-coupang { background: rgba(239,27,27,0.12); color: #ff7070; }
-    .badge-lg { background: rgba(165,0,52,0.12); color: #ff6b8a; }
+    .badge-kakao { background: rgba(230,168,0,0.1); color: #b07c00; }
+    .badge-samsung { background: rgba(26,86,219,0.1); color: #1a56db; }
+    .badge-coupang { background: rgba(192,57,43,0.1); color: #c0392b; }
+    .badge-lg { background: rgba(142,0,40,0.1); color: #8e0028; }
     .feat-period { font-size: 0.7rem; color: var(--muted2); }
-    .feat-title { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.6rem; line-height: 1.3; }
+    .feat-title { font-size: 1.2rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; line-height: 1.3; }
     .feat-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
     .feat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .feat-tag { font-size: 0.73rem; color: var(--text); background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 0.2em 0.6em; border-radius: 2px; }
+    .feat-tag { font-size: 0.73rem; color: var(--muted); background: var(--bg2); border: 1px solid var(--border); padding: 0.2em 0.6em; border-radius: 2px; }
 
     /* ── ALL PROJECTS ── */
     #projects { background: var(--bg); }
     .tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .tab { padding: 0.45em 1.1em; border-radius: 3px; font-size: 0.8rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border); color: var(--muted); background: transparent; transition: all 0.2s; letter-spacing: 0.03em; }
-    .tab:hover { border-color: #444; color: var(--text); }
-    .tab.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    .tab:hover { border-color: var(--accent); color: var(--accent); }
+    .tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
     .projects-list { display: flex; flex-direction: column; gap: 1px; }
     .proj-row {
       display: grid; grid-template-columns: 200px 1fr auto;
@@ -176,7 +185,7 @@
     .proj-company-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; padding: 0.2em 0.6em; border-radius: 2px; text-transform: uppercase; display: inline-block; margin-bottom: 0.4rem; }
     .proj-period { font-size: 0.72rem; color: var(--muted2); }
     .proj-middle {}
-    .proj-title { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+    .proj-title { font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
     .proj-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
     .proj-right { text-align: right; min-width: 160px; }
     .proj-kpi { font-size: 0.8rem; color: var(--text); line-height: 1.8; }
@@ -208,6 +217,8 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .about-grid { grid-template-columns: 1fr; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { display: none; }
       .hero-stats { gap: 2rem; }
       .numbers-grid { grid-template-columns: repeat(2, 1fr); }
       .proj-row { grid-template-columns: 1fr; gap: 0.5rem; }
@@ -235,33 +246,38 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-tag">Product Owner · 13년 경력</div>
-  <h1>안<span>석환</span></h1>
-  <p class="hero-sub">
-    사용자의 흐름을 온·오프라인으로 자연스럽게 이으며,<br>
-    도메인 데이터로 문제를 해결하는 기획자
-  </p>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-val">13<span style="font-size:1rem;font-weight:600;">년</span></div>
-      <div class="hero-stat-label">Product Experience</div>
+  <div class="hero-text">
+    <div class="hero-tag">Product Owner · 13년 경력</div>
+    <h1>안<span>석환</span></h1>
+    <p class="hero-sub">
+      사용자의 흐름을 온·오프라인으로 자연스럽게 이으며,<br>
+      도메인 데이터로 문제를 해결하는 기획자
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">13<span style="font-size:1rem;font-weight:600;">년</span></div>
+        <div class="hero-stat-label">Product Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">2,503<span style="font-size:1rem;font-weight:600;">만</span></div>
+        <div class="hero-stat-label">MAU Peak</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">6<span style="font-size:1rem;font-weight:600;">개</span></div>
+        <div class="hero-stat-label">Awards</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">4<span style="font-size:1rem;font-weight:600;">종</span></div>
+        <div class="hero-stat-label">Patents</div>
+      </div>
     </div>
-    <div class="hero-stat">
-      <div class="hero-stat-val">2,503<span style="font-size:1rem;font-weight:600;">만</span></div>
-      <div class="hero-stat-label">MAU Peak</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-val">6<span style="font-size:1rem;font-weight:600;">개</span></div>
-      <div class="hero-stat-label">Awards</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-val">4<span style="font-size:1rem;font-weight:600;">종</span></div>
-      <div class="hero-stat-label">Patents</div>
+    <div class="hero-cta">
+      <a href="#featured" class="btn-primary">프로젝트 보기</a>
+      <a href="#contact" class="btn-ghost">연락하기</a>
     </div>
   </div>
-  <div class="hero-cta">
-    <a href="#featured" class="btn-primary">프로젝트 보기</a>
-    <a href="#contact" class="btn-ghost">연락하기</a>
+  <div class="hero-photo">
+    <img src="profile.png" alt="안석환 프로필 사진" />
   </div>
 </section>
 
