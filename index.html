@@ -102,14 +102,26 @@
 
     /* ── ABOUT ── */
     #about { background: var(--bg2); }
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start; }
-    .about-text p { color: var(--muted); line-height: 1.95; font-size: 1rem; margin-bottom: 1.1rem; }
-    .about-text p strong { color: var(--text); }
-    .skills-list { display: flex; flex-direction: column; gap: 0.6rem; }
-    .skill-row { display: flex; align-items: center; gap: 1rem; font-size: 0.82rem; }
-    .skill-name { color: var(--muted); width: 160px; flex-shrink: 0; }
-    .skill-bar { flex: 1; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
-    .skill-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+    .about-kw { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
+    .about-kw-tag {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      padding: 0.45em 1.2em; border-radius: 30px;
+      background: var(--accent); color: #000;
+    }
+    .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-bottom: 3.5rem; }
+    .about-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .about-bullets li { font-size: 0.95rem; color: var(--muted); line-height: 1.8; padding-left: 1.2rem; position: relative; }
+    .about-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .about-bullets li strong { color: var(--text); }
+    .about-work { border-top: 1px solid var(--border); padding-top: 3rem; }
+    .about-work-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; }
+    .about-work-grid { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
+    .about-work-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .about-work-bullets li { font-size: 0.92rem; color: var(--muted); line-height: 1.75; padding-left: 1.2rem; position: relative; }
+    .about-work-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .about-work-bullets li strong { color: var(--text); }
+    .about-work-tags { display: flex; flex-direction: column; gap: 0.5rem; min-width: 140px; }
+    .about-work-tag { font-size: 0.8rem; font-weight: 700; padding: 0.45em 1.2em; border-radius: 30px; background: var(--accent); color: #000; text-align: center; white-space: nowrap; }
 
     /* ── CAREER ── */
     #career { background: var(--bg); }
@@ -278,50 +290,46 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="section-eyebrow">About</div>
-  <div class="section-title">AI 서비스를 실전으로 연결합니다</div>
-  <div class="section-desc">GPT 기반 유사도 모델부터 OCR·비전 AI까지, 기술을 수익과 지표 성장으로 연결한 경험</div>
-  <div class="about-grid fade-in">
-    <div class="about-text">
-      <p>
-        <strong>카카오뱅크, 삼성전자, 쿠팡, LG유플러스</strong>에서 13년간 서비스 기획 및 PO 역할을 수행했습니다.
-      </p>
-      <p>
-        GPT 추론 기반 의미론적 유사도 모델을 활용한 AI 서비스 기획 경험으로,
-        문제 정의부터 <strong>자연어 콘텐츠 자동 생성 기반의 End-to-End AI 환경 구조</strong>를 설계합니다.
-      </p>
-      <p>
-        OCR·AI 인식 모델(음성, 비전)을 실제 서비스에 적용한 PO 경험을 통해,
-        기술을 <strong>UX 설계·지표 성장·지속 가능한 수익 구조</strong>로 연결하는 실전 역량 보유.
-      </p>
-      <p>
-        SQL 활용 KPI 지표분석, 고객 경험 퍼널 분석, 상품 비용 매출 관리까지
-        <strong>데이터 기반 의사결정</strong> 전 과정 수행. 카이스트 정보경영시스템 석사.
-      </p>
+  <div class="section-title">About me</div>
+
+  <div class="fade-in">
+    <div class="about-kw">
+      <span class="about-kw-tag">기획/UX/전략</span>
+      <span class="about-kw-tag">AI 서비스</span>
+      <span class="about-kw-tag">플랫폼</span>
+      <span class="about-kw-tag">PM</span>
+      <span class="about-kw-tag">새로운 도메인</span>
+      <span class="about-kw-tag">0 to 1</span>
     </div>
-    <div class="skills-list">
-      <div class="skill-row">
-        <span class="skill-name">AI 서비스 기획</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">수익 구조 설계</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">데이터 분석 (SQL)</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">UX 기획·리서치</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">KPI 관리·그로스</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-      </div>
-      <div class="skill-row">
-        <span class="skill-name">IoT·하드웨어 기획</span>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+
+    <div class="about-body">
+      <ul class="about-bullets">
+        <li>전자공학을 전공하고, LG유플러스에서 개발자로 입사 후 기획자로 전향하여 <strong>정책/UX/어드민 등 상세 기획 업무</strong>를 수행했습니다.</li>
+        <li>게임방송·클라우드게임 서비스에서 <strong>제휴, 가입/철회 정책, 앱어드민을 설계</strong>하고 PM으로서 전체 서비스를 리딩했습니다.</li>
+        <li>SmartThings에서 기기와의 연결, <strong>AI추천, 이커머스 3rd Party 연동</strong> 관련 기획으로 94개국에 출시했습니다.</li>
+        <li>카카오뱅크에서 <strong>GPT 기반 AI 키워드퀴즈를 기획</strong>하고, 공모주·IRP 등 투자 상품 포트폴리오를 설계했습니다.</li>
+        <li>SQL 활용 KPI 지표분석, 고객 퍼널 분석, 상품 비용·매출 관리까지 <strong>데이터 기반 의사결정</strong> 전 과정 수행. 카이스트 정보경영시스템 석사.</li>
+      </ul>
+      <div><!-- spacer --></div>
+    </div>
+
+    <div class="about-work">
+      <div class="about-work-title">이렇게 일해요</div>
+      <div class="about-work-grid">
+        <ul class="about-work-bullets">
+          <li>사용자 경험 리서치, 시장 및 데이터 분석을 통해 인사이트를 도출하고, 프로덕트의 방향성과 로드맵을 정의합니다.</li>
+          <li>사내외 다양한 이해관계자의 복잡한 요사항을 충분한 커뮤니케이션으로 조율하고, 협업을 통해 비즈니스를 프로덕트로 구현합니다.</li>
+          <li>새로운 도메인에서도 처음부터 시작하여 리서치와 분석을 통해 사용자 경험을 설계하고 개선합니다.</li>
+          <li>분석과 인사이트를 통해 가설을 수립하고, 임팩트 기준으로 우선순위를 선정합니다.</li>
+          <li><strong>컨셉 화면 기획/디자인 부터 개발 방향까지 Full stack 기획자로 속도감 있는 업무 방식에 익숙합니다.</strong></li>
+        </ul>
+        <div class="about-work-tags">
+          <span class="about-work-tag">리서치</span>
+          <span class="about-work-tag">데이터분석</span>
+          <span class="about-work-tag">비즈니스이해</span>
+          <span class="about-work-tag">커뮤니케이션</span>
+          <span class="about-work-tag">임팩트 중심</span>
+        </div>
       </div>
     </div>
   </div>
@@ -404,11 +412,14 @@
           <span class="feat-period">2024.09 — 현재</span>
         </div>
         <div class="feat-title">AI 키워드퀴즈</div>
-        <div class="feat-desc">GPT 벡터 유사도 모델 활용, 금융 키워드 퀴즈를 자동 생성하는 AI 서비스. 자연어 정답 시스템 구축으로 개인화 금융 학습 경험 제공.</div>
+        <div class="feat-desc">GPT 벡터 유사도 모델 활용, 금융 키워드 퀴즈를 자동 생성하는 AI 서비스. Claude Code 기반 퀴즈 생성기 구축으로 운영 공수 90% 절감.</div>
         <div class="feat-tags">
-          <span class="feat-tag">리텐션 80%</span>
-          <span class="feat-tag">광고 매출 450만원/일</span>
-          <span class="feat-tag">GPT · 벡터 유사도</span>
+          <span class="feat-tag">D+1 리텐션 70.1%</span>
+          <span class="feat-tag">D+7 이탈률 3~4%</span>
+          <span class="feat-tag">평균 체류 3.1분</span>
+          <span class="feat-tag">평균 입력 6.6회</span>
+          <span class="feat-tag">애드핏 매출 3위 (월 2,340만)</span>
+          <span class="feat-tag">운영공수 90%↓</span>
         </div>
         <a href="https://event.kakaobank.com/p/event?i=keyword" target="_blank" rel="noopener" class="feat-link">서비스 보기 →</a>
       </div>
